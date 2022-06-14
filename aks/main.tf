@@ -17,6 +17,7 @@ resource "azurerm_resource_group" "rg" {
   location = "japan east"
 }
 
+
 resource "azurerm_kubernetes_cluster" "cluster" {
   name       = "${var.cluster_name}-${var.env_name}"
   location   = azurerm_resource_group.rg.location
