@@ -14,7 +14,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name     = "aks-${var.env_name}"
-  location = "east us 2"
+  location = "japan east"
 }
 
 resource "azurerm_kubernetes_cluster" "cluster" {
