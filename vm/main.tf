@@ -14,7 +14,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name     = "vm-${var.env_name}"
-  location = "east us"
+  location = "japan east"
 }
 
 resource "azurerm_virtual_network" "main" {
