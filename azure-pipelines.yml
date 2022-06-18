@@ -30,5 +30,5 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'destroy'
-    commandOptions: '-input=false tfplan'
+    # commandOptions: '-input=false tfplan'
     environmentServiceNameAzureRM: 'Azure for Students(6d897306-d565-4948-bbff-e83dfa654aca)'
