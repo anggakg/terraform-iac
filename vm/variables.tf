@@ -4,5 +4,5 @@ variable "env_name" {
 
 variable "nb_vm" {
   description = "Number of vm to create"
-  default = 2
+  default = 1
 }
