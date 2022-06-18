@@ -32,12 +32,13 @@ resource "azurerm_subnet" "internal" {
 }
 
 resource "azurerm_network_interface" "main" {
-  name                = "nic-${var.env_name}"
+  count               = var.nb_vm
+  name                = "nic-${var.env_name}-${count.index+1}"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
   ip_configuration {
-    name                          = "testconfiguration1"
+    name                          = "testconfiguration1-${count.index+1}"
     subnet_id                     = azurerm_subnet.internal.id
     private_ip_address_allocation = "Dynamic"
   }
