@@ -49,7 +49,7 @@ resource "azurerm_network_interface" "main" {
     name                          = "testconfiguration1-${count.index+1}"
     subnet_id                     = azurerm_subnet.internal.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id = [element(azurerm_public_ip.publicip.*.id, count.index+1)]
+    public_ip_address_id = [element(azurerm_public_ip.publicip.id, count.index+1)]
   }
 }
 
