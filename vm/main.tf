@@ -32,7 +32,7 @@ resource "azurerm_subnet" "internal" {
 }
 
 resource "azurerm_public_ip" "publicip" {
-    name                    = "${var.env_name}PublicIP${count.index+1}"
+    name                    = "PublicIP-${var.env_name}-${count.index+1}"
     location                = azurerm_resource_group.rg.location
     resource_group_name     = azurerm_resource_group.rg.name
     allocation_method       = "Dynamic"
@@ -49,7 +49,7 @@ resource "azurerm_network_interface" "main" {
     name                          = "testconfiguration1-${count.index+1}"
     subnet_id                     = azurerm_subnet.internal.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id = ["${azurerm_public_ip.publicip[count.index+1].id}"]
+    public_ip_address_id = [element(azurerm_public_ip.publicip.*.id, count.index+1)]
   }
 }
 
