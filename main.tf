@@ -10,5 +10,5 @@ module "prod_virtualmachine" {
     source       = "./vm"
     env_name     = "prod"
     subnet       = "10.0.4.0/24"
-    totalvm        = 2
+    totalvm        = 3
 }
