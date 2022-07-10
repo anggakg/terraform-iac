@@ -5,6 +5,7 @@ module "dev_virtualmachine" {
     totalvm        = 2
 }
 
+
 module "prod_virtualmachine" {
     source       = "./vm"
     env_name     = "prod"
