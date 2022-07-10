@@ -18,7 +18,7 @@ variable "subnet" {
 
 variable "username" {
   description = "username linux"
-  default     = "admin"
+  default     = "teestadmin"
   sensitive = true
 }
 
