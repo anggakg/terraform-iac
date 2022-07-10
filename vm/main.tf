@@ -59,7 +59,7 @@ resource "azurerm_virtual_machine" "main" {
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [element(azurerm_network_interface.main.*.id, count.index+1)]
-  vm_size               = "Standard_DS1_v2"
+  vm_size               = var.vm_size
   delete_os_disk_on_termination = true
   delete_data_disks_on_termination = true
 

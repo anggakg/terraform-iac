@@ -12,6 +12,10 @@ variable "totalvm" {
   description = "Number of vm to create"
 }
 
+variable "vm_size" {
+  description = "spec vm"
+}
+
 variable "subnet" {
   description = "ip address prefix"
 }
