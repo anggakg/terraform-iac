@@ -8,9 +8,8 @@ variable "location" {
   default     = "japan east"
 }
 
-variable "count" {
+variable "totalvm" {
   description = "Number of vm to create"
-  default = 2
 }
 
 variable "subnet" {

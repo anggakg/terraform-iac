@@ -32,7 +32,7 @@ resource "azurerm_subnet" "internal" {
 }
 
 resource "azurerm_public_ip" "publicip" {
-    count                   = var.count
+    count                   = var.totalvm
     name                    = "PublicIP-${var.env_name}-${count.index+1}"
     location                = azurerm_resource_group.rg.location
     resource_group_name     = azurerm_resource_group.rg.name
@@ -40,7 +40,7 @@ resource "azurerm_public_ip" "publicip" {
 }
 
 resource "azurerm_network_interface" "main" {
-  count               = var.count
+  count               = var.totalvm
   name                = "nic-${var.env_name}-${count.index+1}"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
@@ -54,7 +54,7 @@ resource "azurerm_network_interface" "main" {
 }
 
 resource "azurerm_virtual_machine" "main" {
-  count               = var.count
+  count               = var.totalvm
   name                  = "vm-${var.env_name}-${count.index+1}"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
