@@ -11,6 +11,6 @@ module "prod_virtualmachine" {
     source       = "./vm"
     env_name     = "prod"
     subnet       = "10.0.4.0/24"
-    vm_size      = "Standard_B2s"
+    vm_size      = "Standard_DS1_v2"
     totalvm      = 4
 }
