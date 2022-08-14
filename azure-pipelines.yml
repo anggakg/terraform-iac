@@ -29,6 +29,6 @@ steps:
 - task: TerraformTaskV3@3
   inputs:
     provider: 'azurerm'
-    command: 'apply'
-    commandOptions: '-input=false tfplan'
+    command: 'destroy'
+    # commandOptions: '-input=false tfplan'
     environmentServiceNameAzureRM: 'Azure for Students(6d897306-d565-4948-bbff-e83dfa654aca)'
