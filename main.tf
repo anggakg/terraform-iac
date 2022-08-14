@@ -2,7 +2,7 @@ module "dev_virtualmachine" {
     source       = "./vm"
     env_name     = "dev"
     subnet       = "10.0.2.0/24"
-    vm_size      = "Standard_B1s"
+    vm_size      = "Standard_B1ms"
     totalvm      = 2   
 }
 
